@@ -8,11 +8,11 @@ export default function Task({ task, toggleTask }) {
 
   return (
     <div>
-        <label>
-            <input type="checkbox" checked={task.complete} 
-            onChange={handleTaskClick} />
-            {task.name}
-        </label>
+      <label>
+        <input type="checkbox" checked={task.complete}
+          onChange={handleTaskClick} />
+        {task.name}
+      </label>
     </div>
   );
 }

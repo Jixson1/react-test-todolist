@@ -33,7 +33,7 @@ function App() {
     const name = taskNameRef.current.value
     if (name === '') return
     setTasks(prevTasks => {
-      return [...prevTasks, { id: uuidv4(), name: name, complete: false}]
+      return [...prevTasks, { id: uuidv4(), name: name, complete: false }]
     })
     taskNameRef.current.value = null;
   }
@@ -44,7 +44,7 @@ function App() {
     setTasks(newTasks);
   }
 
-// component function returns HTML
+  // component function returns HTML
   return (
     <>
       <TodoList tasks={tasks} toggleTask={toggleTask} />
