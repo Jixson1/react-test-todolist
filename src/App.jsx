@@ -44,14 +44,24 @@ function App() {
     setTasks(newTasks);
   }
 
+  function handleKeyPress(e) {
+    const key = e.key;
+    if (key === "Enter") {
+      handleAddTask();
+    }
+
+  }
+
   // component function returns HTML
   return (
     <>
-      <TodoList tasks={tasks} toggleTask={toggleTask} />
-      <input ref={taskNameRef} type="text" />
-      <button onClick={handleAddTask}>Add Tasks</button>
-      <button onClick={handleClearTasks}>Clear Completed</button>
+      <input ref={taskNameRef} type="text" onKeyDown={(e) => handleKeyPress(e)}/>
+      <div>
+        <button onClick={handleAddTask} style={{backgroundColor: 'green', color: 'white'}}>Add Tasks</button>
+        <button onClick={handleClearTasks} style={{backgroundColor: 'darkred', color: 'white'}}>Clear Completed</button>
+      </div>
       <div>{tasks.filter(task => !task.complete).length} Tasks Left</div>
+      <TodoList tasks={tasks} toggleTask={toggleTask} />
     </>
   );
 }
