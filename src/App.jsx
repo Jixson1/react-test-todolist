@@ -29,7 +29,7 @@ function App() {
   }
 
   // when Add Tasks button is pressed
-  function handleAddTask(e) {
+  function handleAddTask() {
     const name = taskNameRef.current.value
     if (name === '') return
     setTasks(prevTasks => {
@@ -49,7 +49,6 @@ function App() {
     if (key === "Enter") {
       handleAddTask();
     }
-
   }
 
   // component function returns HTML
